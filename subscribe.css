@@ -1,0 +1,313 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: white;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #222222, #121212);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #121212;
+    background-color: #f39c12;
+    transform: translateY(-2px);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-right .btn {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar-right .btn:hover {
+    background: #f39c12;
+    color: #121212;
+    border-color: #f39c12;
+    transform: translateY(-2px);
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Main Content Styling */
+h1 {
+    text-align: center;
+    padding-top: 100px;
+    margin: 0 auto 40px;
+    font-size: 2.5rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Plans Grid */
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.recommended {
+    background: #ffa500;
+    color: black;
+}
+
+.badge.green {
+    background: #26c281;
+}
+
+.badge.save {
+    background: #f4d03f;
+}
+
+.plan-card h2 {
+    font-size: 1.25rem;
+    margin: 20px 0 15px;
+    color: #ffa500;
+}
+
+.plan-card p {
+    font-size: 0.9rem;
+    margin: 12px 0;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: white;
+}
+
+.plan-card .strike {
+    text-decoration: line-through;
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 8px;
+}
+
+.subscribe-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: #ffa500;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.subscribe-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .plans {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #222222;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-right {
+        display: none;
+    }
+
+    .navbar-right.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 250px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: #222222;
+    }
+
+    .navbar-right .btn {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        padding-top: 80px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .plans {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .plan-card {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animation for mobile menu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-links.active,
+.navbar-right.active {
+    animation: slideDown 0.3s ease forwards;
+}
