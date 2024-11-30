@@ -1,54 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Signup</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="navbar">
-        <img src="https://www.aha.video/assets/images/logo/aha-logo.svg" alt="Aha Logo">
-    </div>
-    <div class="container" id="container">
-        <!-- Sign In Section -->
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Sign in</h1>
-                <input type="email" placeholder="Email"  required/>
-                <input type="password" placeholder="Password"  required/>
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
-            </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entertainment Website</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo-container">
+        <img
+          src="https://www.aha.video/assets/images/logo/aha-logo.svg"
+          alt="Logo"
+          class="logo"/>
+        <div class="hamburger" onClick="toggleMenu()">
+          <span ></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#movies">New Releases</a></li>
+          <li><a href="#shows">Shows</a></li>
+          <li><a href="#kids">Kids</a></li>
+          <li><a href="#watchfree">Watchfree</a></li>
+          <li><a href="./offer.html">Offers</a></li>
+        </ul>
+      </nav>
+      <div class="navbar-right">
+        <a href="./signup/index.html" class="btn btn-signup">Sign In</a>
+        <a href="./subscribe.html" class="btn btn-subscribe">Subscribe Now</a>
+      </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="carousel">
+      <div class="carousel-slide">
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/6F8F43D9-65AC-422B-A190-78E5ED9A2326/0-3x1.jpg?width=2310&updatedTime=2024-11-15T12:38:30Z&dt=Web"
+          alt="Slide 1"
+        />
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/11A86D05-C927-44E4-A2DA-EB9A1C6A003C/0-3x1.jpg?width=2310&updatedTime=2024-11-18T17:27:07Z&dt=Web"
+          alt="Slide 2"
+        />
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/7791A826-B06B-4B67-9B37-F44718A09450/0-3x1.jpg?width=2310&updatedTime=2024-11-15T12:34:33Z&dt=Web"
+          alt="Slide 3"
+        />
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/3E153C8E-8C6E-47E9-8697-79644726744B/0-3x1.jpg?width=2310&updatedTime=2024-11-15T12:36:09Z&dt=Web"
+          alt="Slide 4"
+        />
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/9D13DDA3-E8DE-43E3-9837-2BBE2A02549B/0-3x1.jpg?width=2310&updatedTime=2024-11-15T12:35:27Z&dt=Web"
+          alt="Slide 5"
+        />
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/AF3A1FA8-7C22-4619-8266-C484342845CD/0-3x1.jpg?width=2310&updatedTime=2024-11-28T14:00:57Z&dt=Web"
+          alt="Slide 6"
+        />
+        <img
+          src="https://image-resizer-cloud-api.akamaized.net/image/E6472706-E9F8-4B46-BB8B-73FC4DF35F9D/0-3x1.jpg?width=2310&updatedTime=2024-11-15T12:37:33Z&dt=Web"
+          alt="Slide 7"
+        />
+        <img src="https://image-resizer-cloud-api.akamaized.net/image/C3F19431-BA11-47F1-B527-122432EDE80A/0-3x1.jpg?width=2310&updatedTime=2024-11-29T09:16:18Z&dt=Web" 
+        alt="Slide 8">
+      </div>
+      <button class="carousel-btn left-btn">&lt;</button>
+      <button class="carousel-btn right-btn">&gt;</button>
+      <div class="carousel-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <!-- New Releases Section -->
+    <section id="movies" class="section">
+      <div class="section-header">
+        <h2>New Releases</h2>
+        <a href="#" class="see-all">See all</a>
+      </div>
+      <div class="card-container">
+        <!-- Sample Movie Cards -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/4AA6284B-A07A-40A5-973F-9E0321385E5D/0-2x3.jpg?width=305&updatedTime=2024-11-21T16:33:00Z&dt=Web"
+            alt="Movie 1"
+          />
+          <div class="card-content">
+            <h3>Iddaru Firee: Part 1</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/7791A826-B06B-4B67-9B37-F44718A09450/0-2x3.jpg?width=305&updatedTime=2024-11-15T12:34:33Z&dt=Web"
+            alt="Movie 2"
+          />
+          <div class="card-content">
+            <h3>Janaka Ayithe Ganaka</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/2BCD75B6-0BBB-48F7-BEB0-6B934C60E193/0-2x3.jpg?width=305&updatedTime=2024-11-15T12:39:30Z&dt=Web"
+            alt="Movie 3"
+          />
+          <div class="card-content">
+            <h3>Singham & Samarashim</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/11A86D05-C927-44E4-A2DA-EB9A1C6A003C/0-2x3.jpg?width=305&updatedTime=2024-11-21T11:45:46Z&dt=Web"
+            alt="Movie 4"
+          />
+          <div class="card-content">
+            <h3>Arthamainda Arun Kumar</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
         </div>
 
-        <!-- Sign Up Section -->
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Create Account</h1>
-                <input type="text" placeholder="Name"  required/>
-                <input type="email" placeholder="Email"  required/>
-                <input type="password" placeholder="Password" required />
-                <button>Sign Up</button>
-            </form>
+        <!-- Card 5 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/9D13DDA3-E8DE-43E3-9837-2BBE2A02549B/0-2x3.jpg?width=305&updatedTime=2024-11-15T12:35:27Z&dt=Web"
+            alt="Movie 5"
+          />
+          <div class="card-content">
+            <h3>Viswam</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
         </div>
 
-        <!-- Overlay Section -->
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start your journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
-                </div>
-            </div>
+        <!-- Card 6 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/3FECB105-B2EB-4B81-83B6-D1D3A393B1B0/0-2x3.jpg?width=305&updatedTime=2024-11-19T01:47:05Z&dt=Web"
+            alt="Movie 6"
+          />
+          <div class="card-content">
+            <h3>Martin</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
         </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+
+        <!-- Card 7 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/3E153C8E-8C6E-47E9-8697-79644726744B/0-2x3.jpg?width=305&updatedTime=2024-11-15T12:36:09Z&dt=Web"
+            alt="Movie 7"
+          />
+          <div class="card-content">
+            <h3>35 Chinna Katha Kadha</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section id="shows" class="section">
+      <div class="section-header">
+        <h2>Shows</h2>
+        <a href="#" class="see-all">See all</a>
+      </div>
+      <div class="card-container">
+        <!-- Sample Show Cards -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/6F8F43D9-65AC-422B-A190-78E5ED9A2326/0-2x3.jpg?width=305&updatedTime=2024-11-22T10:13:11Z&dt=Web"
+            alt="Show 1"
+          />
+          <div class="card-content">
+            <h3>Unstoppable 4</h3>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/92E6ED76-4BBB-43F9-A08A-586F2B40811A/0-2x3.jpg?width=922&updatedTime=2024-11-21T11:48:51Z&dt=Web"
+            alt="Show 2"
+          />
+          <div class="card-content">
+            <h3>Telugu Indian Idol</h3>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/836A0A87-656C-46FE-BBD1-F12BA6088F68/0-2x3.jpg?width=922&updatedTime=2024-11-22T10:02:33Z&dt=Web"
+            alt="Show 3"
+          />
+          <div class="card-content">
+            <h3>SARKAAR</h3>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/E9F1B1FE-D492-4132-A6CB-5EC5928BEB9F/0-2x3.jpg?width=305&updatedTime=2024-11-21T11:47:30Z&dt=Web"
+            alt="Show 4"
+          />
+          <div class="card-content">
+            <h3>Sam Jam</h3>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/A7C4A8B8-B112-4C74-8AFC-6128093F71FC/0-2x3.jpg?width=305&updatedTime=2024-11-21T11:45:49Z&dt=Web"
+            alt="Show 5"
+          />
+          <div class="card-content">
+            <h3>Chef Mantra</h3>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/90D118F9-FD42-42B4-AAD0-94CF8C50BF26/0-2x3.jpg?width=305&updatedTime=2024-11-21T11:44:03Z&dt=Web"
+            alt="Show 6"
+          />
+          <div class="card-content">
+            <h3>Aha Bhojanambu</h3>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/418133EF-2181-44C8-85EB-ED6A2E049CD4/0-2x3.jpg?width=922&updatedTime=2024-10-27T04:26:13Z&dt=Web"
+            alt="Show 7"
+          />
+          <div class="card-content">
+            <h3>Balu Gani Talkies</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kids Section -->
+    <section id="kids" class="section">
+      <div class="section-header">
+        <h2>Kids</h2>
+        <a href="#" class="see-all">See all</a>
+      </div>
+      <div class="card-container">
+        <!-- Sample Kids Cards -->
+        <div class="card">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/AE0B5149-A41D-492E-9031-9D00DA960641/0-2x3.jpg?width=1300&updatedTime=2024-06-28T02:49:37Z&dt=Web" alt="Kids Show 1" />
+          <div class="card-content">
+            <h3>Maha Ganesha</h3>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/28C3BF2C-3282-47FE-AA0B-A74CBFF9040B/0-2x3.jpg?width=305&updatedTime=2024-06-28T02:47:09Z&dt=Web" alt="Kids Show 2" />
+          <div class="card-content">
+            <h3>Christmas Thatha</h3>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/B35722BC-1EBF-4EE2-A4B0-09730948653C/0-2x3.jpg?width=305&updatedTime=2024-06-28T02:04:02Z&dt=Web" alt="Kids Show 3" />
+          <div class="card-content">
+            <h3>Vishnu Promise</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/491B19A1-B08F-4A7D-8D7B-FCB4DD3A04E5/0-2x3.jpg?width=305&updatedTime=2024-06-28T02:27:53Z&dt=Web" alt="Kids Show 4" />
+          <div class="card-content">
+            <h3>Birth of Vinayaka</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://xstreamcp-assets-msp.streamready.in/assets/AHA/MOVIE/657c4030a9540e6b3ede8457/images/0-16x9.jpg" alt="Kids Show 5" />
+          <div class="card-content">
+            <h3>Bala Bharatham</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/49D86AA6-08BE-4554-A954-1FBFB96FBA41/0-2x3.jpg?width=305&updatedTime=2024-06-28T02:04:46Z&dt=Web" alt="Kids Show 6" />
+          <div class="card-content">
+            <h3>Race of the Three Worlds</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/E951A125-2904-4941-BD5F-06DC45148C6E/0-2x3.jpg?width=305&updatedTime=2024-06-28T02:21:41Z&dt=Web" alt="Kids Show 7" />
+          <div class="card-content">
+            <h3>The Moon's Curse</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Watch Free Section -->
+    <section id="watchfree" class="section">
+      <div class="section-header">
+        <h2>Watch Free</h2>
+        <a href="#" class="see-all">See all</a>
+      </div>
+      <div class="card-container">
+        <!-- Sample Watch Free Cards -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/F63FC0C0-475A-47FC-9F76-B57017B1753A/0-2x3.jpg?width=305&updatedTime=2024-11-15T12:38:09Z&dt=Web"
+            alt="Free Movie 1"
+          />
+          <div class="card-content">
+            <h3>Premalu</h3>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/2006C576-B34E-4544-8C54-8C89B8740416/0-2x3.jpg?width=305&updatedTime=2024-11-15T06:48:38Z&dt=Web"
+            alt="Free Movie 2"
+          />
+          <div class="card-content">
+            <h3>18 Pages</h3>
+          </div>
+        </div>
+        <!-- Add more cards here -->
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/FD0ED325-4244-4437-877B-73AB859A1238/0-2x3.jpg?width=305&updatedTime=2024-11-15T07:04:07Z&dt=Web"
+            alt="Free Movie 3"
+          />
+          <div class="card-content">
+            <h3>Krack</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/C95494C7-1FEB-4697-AF56-267BAF635B3A/0-2x3.jpg?width=305&updatedTime=2024-11-15T07:00:31Z&dt=Web"
+            alt="Free Movie 4"
+          />
+          <div class="card-content">
+            <h3>Bheemla Nayak</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/1D67B609-AC68-4A94-B80E-D0B8437B5519/0-2x3.jpg?width=305&updatedTime=2024-11-21T11:46:39Z&dt=Web"
+            alt="Free Movie 5"
+          />
+          <div class="card-content">
+            <h3>3 Roses</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/4B436E0D-B442-4647-9014-5D46B0B3DF37/0-2x3.jpg?width=305&updatedTime=2024-11-19T11:02:22Z&dt=Web"
+            alt="Free Movie 6"
+          />
+          <div class="card-content">
+            <h3>Most Eligible Bachelor</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://image-resizer-cloud-api.akamaized.net/image/E9B92DEE-9107-4A6B-9E3A-4BD01968B819/0-2x3.jpg?width=305&updatedTime=2024-11-22T12:55:50Z&dt=Web"
+            alt="Free Movie 7"
+          />
+          <div class="card-content">
+            <h3>Arjun Suravaram</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="top" class="section">
+      <div class="section-header">
+        <h2>Trending Top 10</h2>
+        <a href="#" class="see-all">See all</a>
+      </div>
+  
+      <!-- Card Container -->
+      <div class="cardt-container" id="card-container">
+        <!-- Cards -->
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/4AA6284B-A07A-40A5-973F-9E0321385E5D/0-9x16.jpg?width=305&updatedTime=2024-11-22T09:26:11Z&dt=Web" alt="Wild Firee: Part 2">
+          <div class="number"></div>
+          <div class="title">Wild Firee: Part 1
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/C3F19431-BA11-47F1-B527-122432EDE80A/0-9x16.jpg?width=305&updatedTime=2024-11-29T09:16:18Z&dt=Web" alt="Laggam">
+          <div class="number"></div>
+          <div class="title">Laggam
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div> 
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/7791A826-B06B-4B67-9B37-F44718A09450/0-9x16.jpg?width=305&updatedTime=2024-11-22T13:08:56Z&dt=Web" alt="Janaka Ayithe Ganaka">
+          <div class="number"></div>
+          <div class="title">Janaka Ayithe Ganaka
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/11A86D05-C927-44E4-A2DA-EB9A1C6A003C/0-9x16.jpg?width=305&updatedTime=2024-11-22T10:13:03Z&dt=Web" alt="Arthamainda Arun Kumar">
+          <div class="number"></div>
+          <div class="title">Arthamainda Arun Kumar
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>  
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/3FECB105-B2EB-4B81-83B6-D1D3A393B1B0/0-9x16.jpg?width=305&updatedTime=2024-11-22T10:13:37Z&dt=Web" alt="Martin">
+          <div class="number"></div>
+          <div class="title">Martin
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/9D13DDA3-E8DE-43E3-9837-2BBE2A02549B/0-9x16.jpg?width=305&updatedTime=2024-11-22T13:09:57Z&dt=Web" alt="Viswam">
+          <div class="number"></div>
+          <div class="title">Viswam
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/E6472706-E9F8-4B46-BB8B-73FC4DF35F9D/0-9x16.jpg?width=305&updatedTime=2024-11-22T13:12:21Z&dt=Web" alt="Maruthi Nagar Subrahmanyam">
+          <div class="number"></div>
+          <div class="title">Maruthi Nagar Subrahmanyam
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/3E153C8E-8C6E-47E9-8697-79644726744B/0-9x16.jpg?width=305&updatedTime=2024-11-22T13:01:25Z&dt=Web" alt="35 Chinna Katha">
+          <div class="number"></div>
+          <div class="title">35 Chinna Katha
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/836A0A87-656C-46FE-BBD1-F12BA6088F68/0-9x16.jpg?width=305&updatedTime=2024-11-22T10:02:33Z&dt=Web" alt="Sarkaar">
+          <div class="number"></div>
+          <div class="title">SARKAAR
+            <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>  
+        <div class="cardt">
+          <img src="https://image-resizer-cloud-api.akamaized.net/image/F63FC0C0-475A-47FC-9F76-B57017B1753A/0-9x16.jpg?width=305&updatedTime=2024-11-29T16:52:38Z&dt=Web" alt="IddaruFiree">
+          <div class="number"></div>
+          <div class="title">Premalu <br>
+            <span class="premium-label"
+              >Premium <i class="fas fa-check"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Mobile Menu Overlay -->
+
+    <section>
+      <footer>
+        <div class="footer-container">
+          <!-- Popular Telugu Movies -->
+          <div class="footer-section">
+            <h3>Popular Telugu Movies</h3>
+            <ul>
+              <li>Eagle</li>
+              <li>Maruthi Nagar Subrahmanyam</li>
+              <li>35 Chinna Katha Kadhu</li>
+              <li>Premalu</li>
+              <li>Masooda</li>
+            </ul>
+          </div>
+
+          <!-- Must Watch Movies -->
+          <div class="footer-section">
+            <h3>Must Watch Movies</h3>
+            <ul>
+              <li>Tantra</li>
+              <li>Prasanna Vadanam</li>
+              <li>Balu Gani Talkies</li>
+              <li>Prathinidhi 2</li>
+              <li>Gorre Puranam</li>
+            </ul>
+          </div>
+
+          <!-- Aha Originals -->
+          <div class="footer-section">
+            <h3>Aha Originals</h3>
+            <ul>
+              <li>Arthamainda Arun Kumar</li>
+              <li>Unstoppable</li>
+              <li>Telugu Indian Idol</li>
+              <li>Bhamakalapam</li>
+              <li>The Baker & The Beauty</li>
+            </ul>
+          </div>
+
+          <!-- Genres -->
+          <div class="footer-section">
+            <h3>Genres</h3>
+            <ul>
+              <li>Telugu Drama Movies</li>
+              <li>Telugu Comedy Movies</li>
+              <li>Telugu Action Movies</li>
+              <li>Telugu Romance Movies</li>
+              <li>Telugu Thriller Movies</li>
+            </ul>
+          </div>
+
+          <!-- Learn More -->
+          <div class="footer-section">
+            <h3>Learn More</h3>
+            <ul>
+              <li><a href="plans.html">View Plans</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="help.html">FAQs / Help</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="grievance.html">Grievance Redressal</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/ahavideoIN"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/ahavideoIN"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/ahavideoin/"><i class="fab fa-instagram"></i></a>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <br />
+          <p>&copy; 2024 Entertainment Website. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </section>
+  </body>
 </html>
